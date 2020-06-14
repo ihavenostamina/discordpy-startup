@@ -4,7 +4,7 @@ import os
 
 #discord
 bot = commands.Bot(command_prefix="$")
-token = os.environ['Njg1ODkzMDA0NjA2ODMyNjY2.XuaZhA.yQkWZ18qVzpO0YXXBPVycWvUby0']
+token = os.environ['DISCORD_BOT_TOKEN']
 
 if not discord.opus.is_loaded():
     discord.opus.load_opus("heroku-buildpack-libopus")
