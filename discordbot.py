@@ -1,9 +1,9 @@
 import discord
 from discord.ext import commands
+
 import os
 
-#discord
-bot = commands.Bot(command_prefix='/')
+bot = commands.Bot(command_prefix="$")
 token = os.environ['DISCORD_BOT_TOKEN']
 
 if not discord.opus.is_loaded():
@@ -37,7 +37,7 @@ async def leave(ctx):
     await ctx.send("ボイスチャンネルから切断しました。")
 
 
-@bot.command(aliases=["chanchan","c"]v)
+@bot.command()
 async def play(ctx):
     """指定された音声ファイルを流します。"""
     voice_client = ctx.message.guild.voice_client
