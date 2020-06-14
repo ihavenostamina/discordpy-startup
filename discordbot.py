@@ -43,7 +43,7 @@ async def leave(ctx):
     await ctx.send("ボイスチャンネルから切断しました。")
 
 
-@bot.command()
+@bot.command(aliases=["chanchan","c"])
 async def play(ctx):
     """指定された音声ファイルを流します。"""
     voice_client = ctx.message.guild.voice_client
@@ -56,9 +56,9 @@ async def play(ctx):
         await ctx.send("ファイルが添付されていません。")
         return
 
-    await ctx.message.attachments[0].save("tmp.mp3")
+    await ctx.message.attachments[0].save("chanchan.mp3")
 
-    ffmpeg_audio_source = discord.FFmpegPCMAudio("tmp.mp3")
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("chanchan.mp3")
     voice_client.play(ffmpeg_audio_source)
 
     await ctx.send("再生しました。")
