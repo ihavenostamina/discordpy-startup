@@ -45,19 +45,6 @@ async def leave(ctx):
 
 @bot.command(aliases=["chanchan","c"])
 async def play(ctx):
-    """指定された音声ファイルを流します。"""
-    voice_client = ctx.message.guild.voice_client
-
-    if not voice_client:
-        await ctx.send("Botはこのサーバーのボイスチャンネルに参加していません。")
-        return
-
-    if not ctx.message.attachments:
-        await ctx.send("ファイルが添付されていません。")
-        return
-
-    await ctx.message.attachments[0].save("chanchan.mp3")
-
     ffmpeg_audio_source = discord.FFmpegPCMAudio("chanchan.mp3")
     voice_client.play(ffmpeg_audio_source)
 
