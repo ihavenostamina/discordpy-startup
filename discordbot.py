@@ -13,11 +13,6 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-
-@bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
-    
 @bot.command(aliases=["s","summon"]) #connectやsummonでも呼び出せる
 async def join(ctx):
     """Botをボイスチャンネルに入室させます。"""
@@ -50,25 +45,7 @@ async def leave(ctx):
 async def chanchan(ctx):
     voice_client = ctx.message.guild.voice_client
     ffmpeg_audio_source = discord.FFmpegPCMAudio("chanchan.mp3")
-    voice_client.play(ffmpeg_audio_source)
-
-@bot.command() 
-async def sc(ctx):
-    """Botをボイスチャンネルに入室させます。"""
-    voice_state = ctx.author.voice
-
-    if (not voice_state) or (not voice_state.channel):
-        await ctx.send("先にボイスチャンネルに入っている必要があります。")
-        return
-
-    channel = voice_state.channel
-
-    await channel.connect()
-    voice_client = ctx.message.guild.voice_client
-    ffmpeg_audio_source = discord.FFmpegPCMAudio("chanchan.mp3")
-    voice_client.play(ffmpeg_audio_source)
-
-    print("connected to:",channel.name)    
+    voice_client.play(ffmpeg_audio_source) 
 
 @bot.command(aliases=["w"])
 async def wind(ctx):
