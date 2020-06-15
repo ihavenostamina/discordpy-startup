@@ -48,6 +48,7 @@ async def leave(ctx):
 
 @bot.command(aliases=["c"])
 async def chanchan(ctx):
+    voice_client = ctx.message.guild.voice_client
     ffmpeg_audio_source = discord.FFmpegPCMAudio("chanchan.mp3")
     voice_client.play(ffmpeg_audio_source)
 
