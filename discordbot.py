@@ -56,5 +56,41 @@ async def wind(ctx):
     voice_client = ctx.message.guild.voice_client
     ffmpeg_audio_source = discord.FFmpegPCMAudio("wind.mp3")
     voice_client.play(ffmpeg_audio_source)
+    
+@bot.command(aliases=["o"])
+async def maru(ctx):
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("maru.mp3")
+    voice_client.play(ffmpeg_audio_source)    
+
+@bot.command(aliases=["x"])
+async def batu(ctx):
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("batu.mp3")
+    voice_client.play(ffmpeg_audio_source)
+        
+@bot.command(aliases=["b"])
+async def bomb(ctx):
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("bomb.mp3")
+    voice_client.play(ffmpeg_audio_source)
+    
+@bot.command(aliases=["e"])
+async def ee(ctx):
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("ee.mp3")
+    voice_client.play(ffmpeg_audio_source)
+        
+@bot.command(aliases=["k"])
+async def kyaa(ctx):
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("kyaa.mp3")
+    voice_client.play(ffmpeg_audio_source)
+    
+@bot.command(aliases=["s"])
+async def start(ctx):
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("start.mp3")
+    voice_client.play(ffmpeg_audio_source)
 
 bot.run(token)
