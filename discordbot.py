@@ -86,11 +86,5 @@ async def kyaa(ctx):
     voice_client = ctx.message.guild.voice_client
     ffmpeg_audio_source = discord.FFmpegPCMAudio("kyaa.mp3")
     voice_client.play(ffmpeg_audio_source)
-    
-@bot.command(aliases=["s"])
-async def start(ctx):
-    voice_client = ctx.message.guild.voice_client
-    ffmpeg_audio_source = discord.FFmpegPCMAudio("start.mp3")
-    voice_client.play(ffmpeg_audio_source)
 
 bot.run(token)
