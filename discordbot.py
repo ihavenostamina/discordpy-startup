@@ -52,6 +52,17 @@ async def chanchan(ctx):
     ffmpeg_audio_source = discord.FFmpegPCMAudio("chanchan.mp3")
     voice_client.play(ffmpeg_audio_source)
 
-    await ctx.send("再生しました。")
+@bot.command(aliases=["w"])
+async def wind(ctx):
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("wind.mp3")
+    voice_client.play(ffmpeg_audio_source)
+
+@bot.command(aliases=["n"])
+async def nosta(ctx):
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("nosta.mp3")
+    voice_client.play(ffmpeg_audio_source)
+
 
 bot.run(token)
