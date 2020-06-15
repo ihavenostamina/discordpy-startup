@@ -94,7 +94,7 @@ async def hahaha(ctx):
     voice_client.play(ffmpeg_audio_source)
 
 @bot.command(aliases=["f"])
-async def hahaha(ctx):
+async def fufufu(ctx):
     voice_client = ctx.message.guild.voice_client
     ffmpeg_audio_source = discord.FFmpegPCMAudio("fufufu.mp3")
     voice_client.play(ffmpeg_audio_source)
