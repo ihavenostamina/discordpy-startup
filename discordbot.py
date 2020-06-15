@@ -46,7 +46,8 @@ async def leave(ctx):
     await ctx.send("ボイスチャンネルから切断しました。")
 
 
-@bot.command(aliases=["chanchan","c"])
+@bot.command(aliases=["c"])
+async def chanchan(ctx):
     ffmpeg_audio_source = discord.FFmpegPCMAudio("chanchan.mp3")
     voice_client.play(ffmpeg_audio_source)
 
